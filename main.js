@@ -1,4 +1,4 @@
-let advice = document.getElementById("advice");
+let advice = document.getElementById("actual-advice");
 let adviceID = document.getElementById("ID");
 let nextBtn = document.getElementById("next");
 
@@ -7,7 +7,7 @@ window.onload = async () => {
 };
 
 nextBtn.onclick = () => {
-  advice.children[0].innerText = "Loading...";
+  advice.innerHTML = "Loading...";
   adviceID.innerHTML = "#00";
   const fet = setTimeout(() => fetchAdvice(), 1000);
 };
@@ -18,12 +18,12 @@ const fetchAdvice = async () => {
   })
     .then((res) => res.json())
     .then((res) => {
-      advice.children[0].innerText = res.slip.advice.toString();
+      advice.innerHTML = res.slip.advice.toString();
       adviceID.innerHTML = "#"+res.slip.id.toString();
     })
     .catch((err) => {
       console.log(err),
-        (advice.children[0].innerText =
+        (advice.innerHTML =
           "Counld not load Advice please try again later");
       adviceID.innerHTML = "000";
     });

@@ -113,6 +113,14 @@ main #next:hover {
   color: var(--neon-green);
   text-decoration: none;
 }
+#actual-advice{
+  display:inline;
+}
+.fa-sharp{
+  transform: translateY(-60%);
+  margin: 3px;
+  font-size: 18px;
+}
 
 @media screen and (min-width: 375px) {
   main {
